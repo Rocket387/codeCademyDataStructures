@@ -1,4 +1,4 @@
-package org.example;
+package org.example.LinearDataStructures;
 
 /**
  * Hello world!
@@ -12,7 +12,7 @@ public class Node
 
     public Node(String data) {
         this.data = data;
-        this.next = next;
+        this.next = null;
     }
 
     public void setNextNode(Node node) {
@@ -23,7 +23,7 @@ public class Node
         return this.next;
     }
 
-    public static void main( String[] args )
+    /*public static void main( String[] args )
     {
 
         Node firstNode = new Node("a");
@@ -42,5 +42,5 @@ public class Node
         }
 
 
-    }
+    }*/
 }
