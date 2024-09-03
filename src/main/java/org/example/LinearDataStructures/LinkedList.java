@@ -91,6 +91,30 @@ public class LinkedList {
 
         seasons.removeHead();
         seasons.printList();
+
+        LinkedList months = new LinkedList();
+
+        months.addToHead("June");
+        months.addToHead("May");
+        months.addToHead("April");
+        months.addToHead("March");
+        months.addToHead("February");
+        months.addToHead("January");
+
+        months.addToTail("July");
+        months.addToTail("August");
+        months.addToTail("September");
+        months.addToTail("October");
+        months.addToTail("November");
+        months.addToTail("December");
+
+        months.printList();
+        months.removeHead();
+
+        months.printList();
+
+        months.removeHead();
+        months.printList();
     }
 
 }
