@@ -117,6 +117,47 @@ public class DoublyLinkedList {
         return removedTail.data;
     }
 
+    public Node removeByData(String data) {
+        Node nodeToRemove = null;
+        Node currentNode = this.head;
+
+        //iterate through the list to find the matching node
+        while(currentNode != null) {
+            if(currentNode.data == data) {
+                nodeToRemove = currentNode;
+                break;
+            }
+            currentNode = currentNode.getNextNode();
+        }
+
+        //if no matching element return null
+        if(nodeToRemove == null) {
+            return null;
+        }
+
+        //if there is a matching node
+        //check to see if it is the head or tail
+        //if so call removeHead or removeTail method
+        if(nodeToRemove == this.head) {
+            removeHead();
+        } else if(nodeToRemove == this.tail) {
+            removeTail();
+        } else {
+            //if not node is somewhere in the middle
+            //remove it by resetting pointer of previous
+            //and next nodes
+            Node nextNode = nodeToRemove.getNextNode();
+            Node previousNode = nodeToRemove.getPreviousNode();
+
+            nextNode.setPreviousNode(previousNode);
+            previousNode.setNextNode(nextNode);
+        }
+
+        //return nodes data
+        return nodeToRemove;
+
+    }
+
     public String printList() {
         Node currentNode = this.head;
         String output = "<head> ";
@@ -124,8 +165,32 @@ public class DoublyLinkedList {
             output += currentNode.data + " ";
             currentNode = currentNode.getNextNode();
         }
-        output += "<tail";
+        output += "<tail>";
         System.out.println(output);
         return output;
+    }
+
+    public static void main(String[] args) {
+        DoublyLinkedList underGroundStations = new DoublyLinkedList();
+
+        underGroundStations.addToHead("Victoria");
+        underGroundStations.addToHead("Jubilee");
+        underGroundStations.addToHead("Elizabeth");
+        underGroundStations.addToTail("Bakerloo");
+        underGroundStations.addToTail("Metropolitan");
+        underGroundStations.addToTail("Circle");
+
+        underGroundStations.printList();
+
+        underGroundStations.removeTail();
+        underGroundStations.removeHead();
+
+        underGroundStations.printList();
+
+        underGroundStations.removeByData("Bakerloo");
+        underGroundStations.printList();
+        underGroundStations.removeByData("District");
+        underGroundStations.printList();
+
     }
 }
