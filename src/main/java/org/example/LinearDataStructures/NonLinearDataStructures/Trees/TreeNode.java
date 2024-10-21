@@ -18,7 +18,8 @@ public class TreeNode {
 
     // addChild method with parameter Object data
     public void addChild(Object childData) {
-        this.children.add(new TreeNode(childData));
+        TreeNode child = new TreeNode(childData);
+        this.children.add(child);
     }
 
     public void removeChild(TreeNode childToRemove) {
@@ -31,6 +32,21 @@ public class TreeNode {
             for (TreeNode child : this.children) {
                 child.removeChild(childToRemove);
             }
+        }
+    }
+
+    public void removeChild(Object data) {
+        if (this.children.isEmpty()) {
+            return;
+        }
+        for (TreeNode child : this.children) {
+            if (child.data == data) {
+                removeChild(child);
+                return;
+            }
+        }
+        for (TreeNode child : this.children) {
+            child.removeChild(data);
         }
     }
 
