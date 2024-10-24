@@ -43,6 +43,27 @@ public class BinarySearchTree {
             }
         }
     }
+
+    //retrieving a node by value
+    //traverses correct branch of the tree by comparing target value
+    //to the current nodes value
+    public BinarySearchTree getNodeByValue(int value) {
+        //base case, when values match, return current node
+        //compare target value with root value (this.value)
+        if (value == this.value) {
+            //if values are the same return 'this' node
+            return this;
+        } else if (value < this.value && this.left != null) {
+            //if value is not found in the node traverse left child node if target value is less than root node
+            //recursive call to method itself
+            return left.getNodeByValue(value);
+        } else if (value > this.value && this.right != null) {
+            //if value is greater than root node value traverse right child node
+            //recursive call to method itself
+            return right.getNodeByValue(value);
+        }
+        return null;
+    }
     public static void main(String[] args) {
 
         BinarySearchTree root = new BinarySearchTree(100);
@@ -50,5 +71,9 @@ public class BinarySearchTree {
         root.insert(125);
         root.insert(75);
         root.insert(25);
+
+        //get nodes by value
+        System.out.println(root.getNodeByValue(75));
+        System.out.println(root.getNodeByValue(55));
     }
 }
