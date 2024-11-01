@@ -64,6 +64,18 @@ public class BinarySearchTree {
         }
         return null;
     }
+
+    // Inorder depthFirstTraversal below
+    public void depthFirstTraversal() {
+        if (this.left != null) {
+            this.left.depthFirstTraversal();
+        }
+        System.out.println(value);
+
+        if (this.right != null) {
+            this.right.depthFirstTraversal();
+        }
+    }
     public static void main(String[] args) {
 
         BinarySearchTree root = new BinarySearchTree(100);
@@ -75,5 +87,28 @@ public class BinarySearchTree {
         //get nodes by value
         System.out.println(root.getNodeByValue(75));
         System.out.println(root.getNodeByValue(55));
+
+        System.out.println(" ");
+        BinarySearchTree tree = new BinarySearchTree(48);
+        tree.insert(24);
+        tree.insert(55);
+        tree.insert(26);
+        tree.insert(38);
+        tree.insert(56);
+        tree.insert(74);
+
+        // Print depth-first traversal
+        tree.depthFirstTraversal();
+
+        System.out.println(" ");
+        System.out.println("Creating Binary Search Tree rooted at value 15:");
+        BinarySearchTree tree2 = new BinarySearchTree(15);
+
+        for (int i = 0; i < 10; i++) {
+            tree2.insert((int) (Math.random() * 100));
+        }
+
+        System.out.println("Printing the inorder depth-first traversal:");
+        tree2.depthFirstTraversal();
     }
 }
