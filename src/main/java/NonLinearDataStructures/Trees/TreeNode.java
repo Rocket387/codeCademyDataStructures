@@ -1,4 +1,4 @@
-package org.example.LinearDataStructures.NonLinearDataStructures.Trees;
+package NonLinearDataStructures.Trees;
 
 import java.util.ArrayList;
 public class TreeNode {

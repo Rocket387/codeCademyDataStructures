@@ -1,4 +1,4 @@
-package org.example.LinearDataStructures.NonLinearDataStructures.Trees.Heaps;
+package NonLinearDataStructures.Trees.Heaps;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -136,7 +136,7 @@ public class MinHeap {
         //right = (index * 2) + 1
     }
 
-    public static void main(String[]args) {
+    public static void main(String[] args) {
         MinHeap minHeap = new MinHeap();
         System.out.println(minHeap.heap);
 
@@ -194,8 +194,6 @@ public class MinHeap {
         // Remove minimum value from minHeap
         System.out.println("Removing the minimum value...");
         System.out.println("Minimum value: " + minHeap7.popMin());
-    }
-
     }
 
 }

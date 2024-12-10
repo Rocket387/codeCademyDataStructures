@@ -1,4 +1,4 @@
-package org.example.LinearDataStructures.NonLinearDataStructures.Trees;
+package NonLinearDataStructures.Trees;
 
 /* for binary Search Trees if value is less than root or depth + 1, add value to the left
 if value greater than root or depth + 1, add value to the right

@@ -1,4 +1,4 @@
-package org.example.LinearDataStructures.NonLinearDataStructures.Trees;
+package NonLinearDataStructures.Trees;
 
 import java.util.Queue;
 import java.util.LinkedList;
