@@ -44,5 +44,25 @@ public class BubbleSort {
         int[] example = {13, 22, 50, 15, 20, 33, 33};
         BubbleSort b = new BubbleSort();
         b.bubbleSort(example);
+
+        System.out.println("\n");
+
+        int[] count_backwards = {9, 8, 7, 6, 5, 4, 3, 2, 1};
+        System.out.println("Starting BubbleSort on reverse sorted: "
+                + Arrays.toString(count_backwards));
+        // Call bubble sort on reverse sorted
+        bubbleSort(count_backwards);
+
+        System.out.println("After Bubble Sort: "
+                + Arrays.toString(count_backwards));
+
+        System.out.println("\n");
+
+        int[] count_forwards = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        System.out.println("Starting BubbleSort on sorted: "
+                + Arrays.toString(count_forwards));
+        // Call bubble sort on sorted
+        bubbleSort(count_forwards);
+        System.out.println("After BubbleSort: " + Arrays.toString(count_forwards));
     }
 }
